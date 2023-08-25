@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using CrudFornecedor.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<Context>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Context") ?? throw new InvalidOperationException("Connection string 'Context' not found.")));
+    options.UseSqlServer(("Server=DESKTOP-VHT7EUR;Database=CrudFornecedor;User Id=sa;Password=1234;TrustServerCertificate=True")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
