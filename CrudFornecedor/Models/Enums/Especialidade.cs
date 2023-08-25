@@ -1,9 +1,8 @@
-﻿namespace CrudFornecedor.Models.Enums
+﻿namespace CrudFornecedor.Models.Enums;
+
+public enum Especialidade
 {
-    public enum Especialidade
-    {
-        Comércio,
-        Serviço,
-        Indústria
-    }
+    Comércio,
+    Serviço,
+    Indústria
 }
