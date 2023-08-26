@@ -28,20 +28,21 @@ namespace CrudFornecedor.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<long>("Cep")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Cep")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cidade")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("Cnpj")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Cnpj")
+                        .HasMaxLength(18)
+                        .HasColumnType("nvarchar(18)");
 
                     b.Property<string>("EnderecoBairro")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EnderecoNumero")
-                        .HasColumnType("int");
+                    b.Property<string>("EnderecoNumero")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EnderecoRua")
                         .HasColumnType("nvarchar(max)");
@@ -53,7 +54,9 @@ namespace CrudFornecedor.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

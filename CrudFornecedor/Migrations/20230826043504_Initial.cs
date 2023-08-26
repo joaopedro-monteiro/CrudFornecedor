@@ -16,12 +16,12 @@ namespace CrudFornecedor.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Cnpj = table.Column<long>(type: "bigint", nullable: false),
+                    Nome = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Cnpj = table.Column<string>(type: "nvarchar(18)", maxLength: 18, nullable: true),
                     Especialidade = table.Column<int>(type: "int", nullable: false),
-                    Cep = table.Column<long>(type: "bigint", nullable: false),
+                    Cep = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EnderecoRua = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EnderecoNumero = table.Column<int>(type: "int", nullable: false),
+                    EnderecoNumero = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EnderecoBairro = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Cidade = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Estado = table.Column<string>(type: "nvarchar(max)", nullable: true)
