@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Projeto CRUD de Fornecedor utilizando ASP.NET Core MVC</title>
+
 </head>
 <body>
 
