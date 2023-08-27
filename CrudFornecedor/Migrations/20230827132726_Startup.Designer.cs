@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrudFornecedor.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230826043504_Initial")]
-    partial class Initial
+    [Migration("20230827132726_Startup")]
+    partial class Startup
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,8 +53,8 @@ namespace CrudFornecedor.Migrations
                     b.Property<int>("Especialidade")
                         .HasColumnType("int");
 
-                    b.Property<string>("Estado")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Estado")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .IsRequired()

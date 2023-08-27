@@ -1,8 +1,15 @@
-﻿namespace CrudFornecedor.Models.Enums;
+﻿using System.ComponentModel;
+
+namespace CrudFornecedor.Models.Enums;
 
 public enum Especialidade
 {
-    Comércio,
-    Serviço,
-    Indústria
+    [Description("Comércio")]
+    Comercio,
+
+    [Description("Serviço")]
+    Servico,
+
+    [Description("Indústria")]
+    Industria
 }
