@@ -50,8 +50,8 @@ namespace CrudFornecedor.Migrations
                     b.Property<int>("Especialidade")
                         .HasColumnType("int");
 
-                    b.Property<string>("Estado")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Estado")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .IsRequired()
