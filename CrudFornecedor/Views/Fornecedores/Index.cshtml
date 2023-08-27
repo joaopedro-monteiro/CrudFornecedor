@@ -7,7 +7,7 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<table class="table table-striped table-hover table-header">
+<table class="table table-striped table-hover table-header custom-table">
     <thead class="table">
     <tr>
         <th style="text-align: center; font-size: 16px;">
@@ -29,6 +29,9 @@
             @Html.DisplayNameFor(model => model.EnderecoNumero)
         </th>
         <th style="text-align: center; font-size: 16px">
+            @Html.DisplayNameFor(model => model.EnderecoComplemento)
+        </th>
+        <th style="text-align: center; font-size: 16px">
             @Html.DisplayNameFor(model => model.EnderecoBairro)
         </th>
         <th style="text-align: center; font-size: 16px">
@@ -47,20 +50,23 @@
             <td style="text-align: center">
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
-            <td style="text-align: center">
+            <td style="text-align: center" class="cnpj-column">
                 @Html.DisplayFor(modelItem => item.CnpjFormatado)
             </td>
             <td style="text-align: center">
                 @item.Especialidade.GetDescription()
             </td>
-            <td style="text-align: center">
-                @Html.DisplayFor(modelItem => item.Cep)
+            <td style="text-align: center" class="cep-column">
+                @Html.DisplayFor(modelItem => item.CepFormatado)
             </td>
             <td style="text-align: center">
                 @Html.DisplayFor(modelItem => item.EnderecoRua)
             </td>
             <td style="text-align: center">
                 @Html.DisplayFor(modelItem => item.EnderecoNumero)
+            </td>
+            <td style="text-align: center">
+                @Html.DisplayFor(modelItem => item.EnderecoComplemento)
             </td>
             <td style="text-align: center">
                 @Html.DisplayFor(modelItem => item.EnderecoBairro)
@@ -109,5 +115,21 @@
             .button-container a {
                 margin-right: 10px;
             }
+    </style>
+    <style>
+        .cnpj-column
+        {
+            min-width: 165px;
+        }
+
+        .cep-column {
+            min-width: 120px;
+        }
+
+        .custom-table {
+            width: auto;
+            margin-left: -40px;
+            table-layout: fixed;
+        }
     </style>
 }

@@ -29,22 +29,32 @@ namespace CrudFornecedor.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Cep")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(9)
+                        .HasColumnType("nvarchar(9)");
 
                     b.Property<string>("Cidade")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cnpj")
+                        .IsRequired()
                         .HasMaxLength(18)
                         .HasColumnType("nvarchar(18)");
 
                     b.Property<string>("EnderecoBairro")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EnderecoComplemento")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EnderecoNumero")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EnderecoRua")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Especialidade")
