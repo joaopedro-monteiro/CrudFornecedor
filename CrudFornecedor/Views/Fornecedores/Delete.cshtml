@@ -1,4 +1,5 @@
-﻿@model Fornecedor
+﻿@using CrudFornecedor.Extensions
+@model Fornecedor
 
 @{
     ViewData["Title"] = "Apagar";
@@ -21,13 +22,13 @@
             @Html.DisplayNameFor(model => model.CnpjFormatado)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cnpj)
+            @Html.DisplayFor(model => model.CnpjFormatado)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Especialidade)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Especialidade)
+            @Model.Especialidade.GetDescription()
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Cep)
@@ -63,7 +64,7 @@
             @Html.DisplayNameFor(model => model.Estado)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
+            @Model.Estado.GetDescription()
         </dd>
     </dl>
 
