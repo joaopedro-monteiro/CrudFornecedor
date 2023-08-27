@@ -1,5 +1,6 @@
 ﻿@model CrudFornecedor.Models.Fornecedor
 @using CrudFornecedor.Models.Enums;
+@using CrudFornecedor.Extensions
 
 @{
     ViewData["Title"] = "Criar";
@@ -29,7 +30,7 @@
                     <option value="">Escolha a especialidade</option>
                     @foreach (var item in Html.GetEnumSelectList<Especialidade>())
                     {
-                        <option value="@item.Value">@item.Text</option>
+                        <option value="@item.Value">@(Enum.Parse<Especialidade>(item.Value).GetDescription())</option>
                     }
                 </select>
                 <span asp-validation-for="Especialidade" class="text-danger"></span>
@@ -66,7 +67,7 @@
                     <option value="">Escolha o estado</option>
                     @foreach (var item in Html.GetEnumSelectList<Estado>())
                     {
-                        <option value="@item.Value">@item.Text</option>
+                        <option value="@item.Value">@(Enum.Parse<Estado>(item.Value).GetDescription())</option>
                     }
                 </select>
                 <span asp-validation-for="Estado" class="text-danger"></span>
