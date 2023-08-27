@@ -98,6 +98,25 @@
                 var cnpj = $('#Cep').cleanVal();
                 $('#Cep').val(cnpj);
             });
+
+            $('#Cep').blur(function () {
+                const cep = $('#Cep').val().replace(/\D/g, "");
+
+                if (cep.length !== 8)
+                    return;
+
+                $.getJSON(`https://viacep.com.br/ws/${cep}/json/`)
+                    .done(function (data) {
+                        $("#EnderecoRua").val(data.logradouro);
+                        $("#EnderecoBairro").val(data.bairro);
+                        $("#Cidade").val(data.localidade);
+                        $("#Estado").val(data.ibge.substr(0, 2));
+                    })
+                    .fail(function (error) {
+                        console.error("Erro ao buscar CEP:", error);
+                    });
+            });
+
         });
     </script>
 }
